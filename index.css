@@ -1,0 +1,53 @@
+body {
+    font-size: 20px;
+}
+
+.header {
+    font-size: 50px;
+    text-align: center;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    font-family: arial, sans-serif;
+    background-color: white;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+td {
+    font-size: 20px;
+}
+
+th {
+    font-size: 30px;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+.charts {
+    width: 50%;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.sele {
+    border-color: red;
+    /* border-radius: 3px; */
+    border-style: solid;
+    color: red;
+}
+
+button {
+    margin: 5px;
+}
+
+#blurb {
+    margin-left: 50px;
+}

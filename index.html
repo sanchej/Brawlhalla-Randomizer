@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brawlhalla Randomizer</title>
+   <!--Bootstrap-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"></script>
+   <!--Custom Style-->
+   <link rel="stylesheet" type="text/css" href="index.css">
+   <!--Vue-->
+   <script src="https://unpkg.com/vue@3"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+</head>
+<body>
+    <div style="border-color: black;" >
+        <h1 id="blurb">Welcome to the Brawlhalla Randomizer</h1>
+    </div>
+
+    <div id='app'>
+        <div class="container">
+            <div>
+                <button v-on:click="WeaponChangeAll" type="button" class="btn btn-success">ALL</button> 
+                <span v-for="element in ShownWeapons">
+                   <button v-if="!element.shown" v-on:click="WeaponChange(element.Weapon)" class="btn btn-light"  type="button" style="margin: 5px;">
+                      <img v-bind:src="'./WeaponPic/' + element.Weapon + '.jpg'" alt="element.Weapon" style="height: 45px; width 45px;">
+                      </button>
+                      <button v-else class="btn btn-primary" v-on:click="WeaponChange(element.Weapon)" type="button">
+                        <img v-bind:src="'./WeaponPic/' + element.Weapon + '.jpg'" alt="element.Weapon" style="height: 45px; width 45px;">
+                      </button>
+                </span>
+             </div>
+             <button type="button" v-on:click="Randomize">Random</button>
+             <button type="button" v-on:click="RandomizeRemove">Random Remove</button>
+             <button type="button" v-on:click="RandomizeGuaranteed">No Repeats</button>
+             <h3>{{SELECTED}}</h3><img v-bind:src="'./Portrait/' + SELECTED + '.jpg'" :alt="SELECTED">
+
+            <div id="test" style="display: grid; grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;">
+                <div v-for="element in Legend" v-bind:id="element.Name">
+                    
+                    <img  v-if="data_show.filter(e => e.Name === element.Name).length > 0" v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="SELECTED" v-on:click="ClickRemove(element.Name)" style="width: 75px; height: 75px; padding: 5px;">
+                    <img  v-else v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="SELECTED" v-on:click="ClickRemove(element.Name)" style="width: 75px; height: 75px; padding: 5px; opacity: 50%;">
+                    <p style="size: 14px;" >{{ element.Name }}</p>
+                </div>
+            </div> 
+                    
+                    
+                    
+            <!--<table>
+                <tr>
+                    <th>Name</th>
+                    <th>Weapon 1</th>
+                    <th>Weapon 2</th>
+                </tr>
+                <tr v-for="element in data_show" >
+                    <td>{{element.Name}}</td>
+                    <td>
+                        <img v-bind:src="'./WeaponPic/' + Weapons[element.Weapon1] + '.jpg'" :alt="Weapons[element.Weapon1]"/>
+                        <p>{{Weapons[element.Weapon1]}}</p>
+                    </td>
+                    <td>
+                        <img v-bind:src="'./WeaponPic/' + Weapons[element.Weapon2] + '.jpg'" :alt="Weapons[element.Weapon2]"/>
+                        <p>{{Weapons[element.Weapon2]}}</p>
+                    </td>
+                </tr>
+            </table>
+        -->
+        </div>
+     </div>
+    
+    
+     <script src="spinJS.js"></script>
+</body>
+</html>
