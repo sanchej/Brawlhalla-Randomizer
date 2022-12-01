@@ -36,24 +36,24 @@
                 <button v-on:click="WeaponChangeAll" type="button" class="btn btn-success">ALL</button> 
                 <span v-for="element in ShownWeapons">
                    <button v-if="!element.shown" v-on:click="WeaponChange(element.Weapon)" class="btn btn-light"  type="button" style="margin: 5px;">
-                      <img v-bind:src="'./WeaponPic/' + element.Weapon + '.jpg'" alt="element.Weapon" style="height: 45px; width 45px;">
+                      <img class="weaponpic" v-bind:src="'./WeaponPic/' + element.Weapon + '.jpg'" alt="element.Weapon">
                       </button>
                       <button v-else class="btn btn-primary" v-on:click="WeaponChange(element.Weapon)" type="button">
-                        <img v-bind:src="'./WeaponPic/' + element.Weapon + '.jpg'" alt="element.Weapon" style="height: 45px; width 45px;">
+                        <img class="weaponpic" v-bind:src="'./WeaponPic/' + element.Weapon + '.jpg'" alt="element.Weapon" >
                       </button>
                 </span>
              </div>
              <button type="button" v-on:click="Randomize">Random</button>
              <button type="button" v-on:click="RandomizeRemove">Random Remove</button>
              <button type="button" v-on:click="RandomizeGuaranteed">No Repeats</button>
-             <h3>{{SELECTED}}</h3><img v-bind:src="'./Portrait/' + SELECTED + '.jpg'" :alt="SELECTED">
+             <h3>{{SELECTED}}</h3><img id="Display" v-if="SELECTED != ''" v-bind:src="'./Portrait/' + SELECTED + '.jpg'" :alt="SELECTED">
 
             <div id="test" >
                 <div class="col-2" v-for="element in Legend" v-bind:id="element.Name">
-                    <img   v-if="data_show.filter(e => e.Name === element.Name).length > 0" v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="SELECTED" v-on:click="ClickRemove(element.Name)" style="width: 90px; height: 90px; padding: 5px;">
-                    <img   v-else v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="SELECTED" v-on:click="ClickReinstate(element.Name)" style="width: 90px; height: 90px; padding: 5px; opacity: 50%;">
-                    <p v-if="data_show.filter(e => e.Name === element.Name).length > 0" style="size: 14px;" >{{ element.Name }}</p>
-                    <p v-else style="size: 14px; opacity: 50%;" >{{ element.Name }}</p>
+                    <img v-if="data_show.filter(e => e.Name === element.Name).length > 0" v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="element.Name" v-on:click="ClickRemove(element.Name)" class="portrait">
+                    <img v-else v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="element.Name" v-on:click="ClickReinstate(element.Name)" class="portrait greyed">
+                    <p v-if="data_show.filter(e => e.Name === element.Name).length > 0" class="name">{{ element.Name }}</p>
+                    <p v-else class="name greyed"  >{{ element.Name }}</p>
                 </div>
             </div> 
                     

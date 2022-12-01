@@ -1,8 +1,3 @@
-function getImgUrl(wep) {
-    var images = require.context('../assets/', false, /\.jpg$/);
-    return images('./WeaponPic/' + wep + ".png");
-}
-
 const { createApp } = Vue
 createApp({
     data() {
@@ -28,119 +23,64 @@ createApp({
                     this.Weapon2 = wep2;
                 }
             }
-            Temp = [];
-            L1 = new Legends('Bodvar', 0, 1);
-            Temp.push(L1);
-            L2 = new Legends('Cassidy', 2, 0);
-            Temp.push(L2);
-            L3 = new Legends('Orion', 3, 4, 3);
-            Temp.push(L3);
-            L4 = new Legends('Lord Vraxx', 3, 2);
-            Temp.push(L4);
-            L5 = new Legends('Gnash', 4, 0);
-            Temp.push(L5);
-            L6 = new Legends('Queen Nai', 4, 5);
-            Temp.push(L6);
-            L7 = new Legends('Hattori', 4, 1);
-            Temp.push(L7);
-            L8 = new Legends('Sir Roland', 1, 3);
-            Temp.push(L8);
-            L9 = new Legends('Scarlet', 3, 0);
-            Temp.push(L9);
-            L10 = new Legends('Thatch', 1, 2);
-            Temp.push(L10);
-            L11 = new Legends('Ada', 4, 2);
-            Temp.push(L11);
-            L12 = new Legends('Sentinel', 0, 5);
-            Temp.push(L12);
-            L13 = new Legends('Lucien', 5, 2);
-            Temp.push(L13);
-            L14 = new Legends('Teros', 0, 6);
-            Temp.push(L14);
-            L15 = new Legends('Brynn', 4, 6);
-            Temp.push(L15);
-            L16 = new Legends('Asuri', 5, 1);
-            Temp.push(L16);
-            L17 = new Legends('Barazza', 1, 6);
-            Temp.push(L17);
-            L18 = new Legends('Ember', 7, 5);
-            Temp.push(L18);
-            L19 = new Legends('Azoth', 6, 7);
-            Temp.push(L19);
-            L20 = new Legends('Koji', 1, 7);
-            Temp.push(L20);
-            L21 = new Legends('Ulgrim', 6, 3);
-            Temp.push(L21);
-            L22 = new Legends('Diana', 2, 7);
-            Temp.push(L22);
-            L23 = new Legends('Jhala', 1, 6);
-            Temp.push(L23);
-            L24 = new Legends('Kor', 8, 0);
-            Temp.push(L24);
-            L25 = new Legends('Wu Shang', 4, 8);
-            Temp.push(L25);
-            L26 = new Legends('Val', 1, 8);
-            Temp.push(L26);
-            L27 = new Legends('Ragnir', 5, 6);
-            Temp.push(L27);
-            L28 = new Legends('Cross', 2, 8);
-            Temp.push(L28);
-            L29 = new Legends('Mirage', 4, 9);
-            Temp.push(L29);
-            L30 = new Legends('Nix', 2, 9);
-            Temp.push(L30);
-            L31 = new Legends('Mordex', 8, 9);
-            Temp.push(L31);
-            L32 = new Legends('Yumiko', 0, 7);
-            Temp.push(L32);
-            L33 = new Legends('Artemis', 3, 9);
-            Temp.push(L33);
-            L34 = new Legends('Caspian', 5, 8);
-            Temp.push(L34);
-            L35 = new Legends('Sidra', 1, 10);
-            Temp.push(L35);
-            L36 = new Legends('Xull', 6, 10);
-            Temp.push(L36);
-            L37 = new Legends('Kaya', 4, 7);
-            Temp.push(L37);
-            L38 = new Legends('Isaiah', 2, 10);
-            Temp.push(L38);
-            L39 = new Legends('Jiro', 1, 9);
-            Temp.push(L39);
-            L40 = new Legends('Lin Fei', 5, 10);
-            Temp.push(L40);
-            L41 = new Legends('Zariel', 7, 8);
-            Temp.push(L41);
-            L42 = new Legends('Rayman', 6, 8);
-            Temp.push(L42);
-            L43 = new Legends('Dusk', 4, 11);
-            Temp.push(L43);
-            L44 = new Legends('Fait', 9, 11);
-            Temp.push(L44);
-            L45 = new Legends('Thor', 0, 11);
-            Temp.push(L45);
-            L46 = new Legends('Petra', 8, 11);
-            Temp.push(L46);
-            L47 = new Legends('Vector', 7, 3);
-            Temp.push(L47);
-            L48 = new Legends('Volkov', 6, 9);
-            Temp.push(L48);
-            L49 = new Legends('Onyx', 8, 10);
-            Temp.push(L49);
-            L50 = new Legends('Jaeyun', 1, 12);
-            Temp.push(L50);
-            L51 = new Legends('Mako', 5, 12);
-            Temp.push(L51);
-            L52 = new Legends('Magyar', 0, 12);
-            Temp.push(L52);
-            L53 = new Legends('Reno', 2, 11);
-            Temp.push(L53);
-            L54 = new Legends('Munin', 7, 9);
-            Temp.push(L54);
-            L55 = new Legends('Arcadia', 4, 12);
-            Temp.push(L55);
-            L56 = new Legends('Ezio', 1, 11);
-            Temp.push(L56);
+            Temp = [
+                { "Name": 'Bodvar', "Weapon1": 0, "Weapon2": 1 },
+                { "Name": 'Cassidy', "Weapon1": 2, "Weapon2": 0 },
+                { "Name": 'Orion', "Weapon1": 3, "Weapon2": 4 },
+                { "Name": 'Lord Vraxx', "Weapon1": 3, "Weapon2": 2 },
+                { "Name": 'Gnash', "Weapon1": 4, "Weapon2": 0 },
+                { "Name": 'Queen Nai', "Weapon1": 4, "Weapon2": 5 },
+                { "Name": 'Hattori', "Weapon1": 4, "Weapon2": 1 },
+                { "Name": 'Sir Roland', "Weapon1": 1, "Weapon2": 3 },
+                { "Name": 'Scarlet', "Weapon1": 3, "Weapon2": 0 },
+                { "Name": 'Thatch', "Weapon1": 1, "Weapon2": 2 },
+                { "Name": 'Ada', "Weapon1": 4, "Weapon2": 2 },
+                { "Name": 'Sentinel', "Weapon1": 0, "Weapon2": 5 },
+                { "Name": 'Lucien', "Weapon1": 5, "Weapon2": 2 },
+                { "Name": 'Teros', "Weapon1": 0, "Weapon2": 6 },
+                { "Name": 'Brynn', "Weapon1": 4, "Weapon2": 6 },
+                { "Name": 'Asuri', "Weapon1": 5, "Weapon2": 1 },
+                { "Name": 'Barazza', "Weapon1": 1, "Weapon2": 6 },
+                { "Name": 'Ember', "Weapon1": 7, "Weapon2": 5 },
+                { "Name": 'Azoth', "Weapon1": 6, "Weapon2": 7 },
+                { "Name": 'Koji', "Weapon1": 1, "Weapon2": 7 },
+                { "Name": 'Ulgrim', "Weapon1": 6, "Weapon2": 3 },
+                { "Name": 'Diana', "Weapon1": 2, "Weapon2": 7 },
+                { "Name": 'Jhala', "Weapon1": 1, "Weapon2": 6 },
+                { "Name": 'Kor', "Weapon1": 8, "Weapon2": 0 },
+                { "Name": 'Wu Shang', "Weapon1": 4, "Weapon2": 8 },
+                { "Name": 'Val', "Weapon1": 1, "Weapon2": 8 },
+                { "Name": 'Ragnir', "Weapon1": 5, "Weapon2": 6 },
+                { "Name": 'Cross', "Weapon1": 2, "Weapon2": 8 },
+                { "Name": 'Mirage', "Weapon1": 4, "Weapon2": 9 },
+                { "Name": 'Nix', "Weapon1": 2, "Weapon2": 9 },
+                { "Name": 'Mordex', "Weapon1": 8, "Weapon2": 9 },
+                { "Name": 'Yumiko', "Weapon1": 0, "Weapon2": 7 },
+                { "Name": 'Artemis', "Weapon1": 3, "Weapon2": 9 },
+                { "Name": 'Caspian', "Weapon1": 5, "Weapon2": 8 },
+                { "Name": 'Sidra', "Weapon1": 1, "Weapon2": 10 },
+                { "Name": 'Xull', "Weapon1": 6, "Weapon2": 10 },
+                { "Name": 'Kaya', "Weapon1": 4, "Weapon2": 7 },
+                { "Name": 'Isaiah', "Weapon1": 2, "Weapon2": 10 },
+                { "Name": 'Jiro', "Weapon1": 1, "Weapon2": 9 },
+                { "Name": 'Lin Fei', "Weapon1": 5, "Weapon2": 10 },
+                { "Name": 'Zariel', "Weapon1": 7, "Weapon2": 8 },
+                { "Name": 'Rayman', "Weapon1": 6, "Weapon2": 8 },
+                { "Name": 'Dusk', "Weapon1": 4, "Weapon2": 11 },
+                { "Name": 'Fait', "Weapon1": 9, "Weapon2": 11 },
+                { "Name": 'Thor', "Weapon1": 0, "Weapon2": 11 },
+                { "Name": 'Petra', "Weapon1": 8, "Weapon2": 11 },
+                { "Name": 'Vector', "Weapon1": 7, "Weapon2": 3 },
+                { "Name": 'Volkov', "Weapon1": 6, "Weapon2": 9 },
+                { "Name": 'Onyx', "Weapon1": 8, "Weapon2": 10 },
+                { "Name": 'Jaeyun', "Weapon1": 1, "Weapon2": 12 },
+                { "Name": 'Mako', "Weapon1": 5, "Weapon2": 12 },
+                { "Name": 'Magyar', "Weapon1": 0, "Weapon2": 12 },
+                { "Name": 'Reno', "Weapon1": 2, "Weapon2": 11 },
+                { "Name": 'Reno', "Weapon1": 2, "Weapon2": 11 },
+                { "Name": 'Munin', "Weapon1": 7, "Weapon2": 9 },
+                { "Name": 'Arcadia', "Weapon1": 4, "Weapon2": 12 },
+                { "Name": 'Ezio', "Weapon1": 1, "Weapon2": 11 }]
             tempnum = 0;
             Temp.forEach(element => {
                 element.Number = tempnum;
@@ -178,11 +118,9 @@ createApp({
                 }
             }
             temp2 = this.Legend.filter(el => temp.includes(el.Weapon1));
-            console.log(temp2);
             temp3 = this.Legend.filter(el => temp.includes(el.Weapon2));
-            console.log(temp3);
             temp2 = temp2.concat(temp3);
-            console.log(temp2);
+
             this.data_show = temp2;
         },
         WeaponChangeAll() {
@@ -192,20 +130,20 @@ createApp({
         Randomize() {
             $(".sele").removeClass("sele");
             this.SELECTED = this.data_show[Math.floor(Math.random() * this.data_show.length)].Name;
-            $("#" + this.SELECTED).addClass("sele");
+            $("[id='" + this.SELECTED + "']").addClass("sele");
         },
         RandomizeRemove() {
             $(".sele").removeClass("sele");
             this.SELECTED = this.data_show[Math.floor(Math.random() * this.data_show.length)].Name;
             this.data_show = this.data_show.filter(el => el.Name != this.SELECTED);
-            $("#" + this.SELECTED).addClass("sele");
+            $("[id='" + this.SELECTED + "']").addClass("sele");
         },
         RandomizeGuaranteed() {
-            $(".sele").removeClass("sele");
             temp = this.SELECTED;
             while (temp == this.SELECTED) {
+                $(".sele").removeClass("sele");
                 this.SELECTED = this.data_show[Math.floor(Math.random() * this.data_show.length)].Name;
-                $("#" + this.SELECTED).addClass("sele");
+                $("[id='" + this.SELECTED + "']").addClass("sele");
             }
         },
         ClickRemove(name) {
@@ -219,11 +157,25 @@ createApp({
             temp = this.Legend.filter(el => el.Name == name);
             this.data_show = this.data_show.concat(temp);
         },
+        keyPressRouter(event) {
+            switch (event.which) {
+                case 49:
+                    this.Randomize();
+                    break;
+                case 50:
+                    this.RandomizeRemove();
+                    break;
+                case 51:
+                    this.RandomizeGuaranteed();
+                    break;
+            }
+        },
 
 
     },
     beforeMount() {
         this.Initialize()
+        $(window).keydown(this.keyPressRouter);
     },
     mounted() {
 
