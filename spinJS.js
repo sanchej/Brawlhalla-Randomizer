@@ -213,6 +213,12 @@ createApp({
             this.SELECTED = "";
             this.data_show = this.data_show.filter(el => el.Name != name);
         },
+        ClickReinstate(name) {
+            $(".sele").removeClass("sele");
+            this.SELECTED = "";
+            temp = this.Legend.filter(el => el.Name == name);
+            this.data_show = this.data_show.concat(temp);
+        },
 
 
     },
