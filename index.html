@@ -48,12 +48,12 @@
              <button type="button" v-on:click="RandomizeGuaranteed">No Repeats</button>
              <h3>{{SELECTED}}</h3><img v-bind:src="'./Portrait/' + SELECTED + '.jpg'" :alt="SELECTED">
 
-            <div id="test" style="display: grid; grid-template-columns: 10% 10% 10% 10% 10% 10% 10% 10% 10% 10%;">
-                <div v-for="element in Legend" v-bind:id="element.Name">
-                    
-                    <img  v-if="data_show.filter(e => e.Name === element.Name).length > 0" v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="SELECTED" v-on:click="ClickRemove(element.Name)" style="width: 75px; height: 75px; padding: 5px;">
-                    <img  v-else v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="SELECTED" v-on:click="ClickReinstate(element.Name)" style="width: 75px; height: 75px; padding: 5px; opacity: 50%;">
-                    <p style="size: 14px;" >{{ element.Name }}</p>
+            <div id="test" >
+                <div class="col-2" v-for="element in Legend" v-bind:id="element.Name">
+                    <img   v-if="data_show.filter(e => e.Name === element.Name).length > 0" v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="SELECTED" v-on:click="ClickRemove(element.Name)" style="width: 90px; height: 90px; padding: 5px;">
+                    <img   v-else v-bind:src="'./Portrait/' + element.Name + '.jpg'" :alt="SELECTED" v-on:click="ClickReinstate(element.Name)" style="width: 90px; height: 90px; padding: 5px; opacity: 50%;">
+                    <p v-if="data_show.filter(e => e.Name === element.Name).length > 0" style="size: 14px;" >{{ element.Name }}</p>
+                    <p v-else style="size: 14px; opacity: 50%;" >{{ element.Name }}</p>
                 </div>
             </div> 
                     
