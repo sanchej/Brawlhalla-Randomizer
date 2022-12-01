@@ -77,7 +77,6 @@ createApp({
                 { "Name": 'Mako', "Weapon1": 5, "Weapon2": 12 },
                 { "Name": 'Magyar', "Weapon1": 0, "Weapon2": 12 },
                 { "Name": 'Reno', "Weapon1": 2, "Weapon2": 11 },
-                { "Name": 'Reno', "Weapon1": 2, "Weapon2": 11 },
                 { "Name": 'Munin', "Weapon1": 7, "Weapon2": 9 },
                 { "Name": 'Arcadia', "Weapon1": 4, "Weapon2": 12 },
                 { "Name": 'Ezio', "Weapon1": 1, "Weapon2": 11 }]
